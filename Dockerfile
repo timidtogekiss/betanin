@@ -43,9 +43,9 @@ RUN apk add --no-cache --upgrade --virtual=build-dependencies build-base libffi-
     apk del --purge build-dependencies && \
     rm -r /pkgs /tmp/* ~/.cache
 
-VOLUME /b/.local/share/betanin/
-VOLUME /b/.config/betanin/
-VOLUME /b/.config/beets/
+VOLUME /b/
+
+RUN mkdir -p /b/.local/share/betanin && mkdir -p /b/.config/betanin && mkdir -p /b/.config/betanin
 
 ENV HOME=/b
 ENV PYTHONUNBUFFERED=1
